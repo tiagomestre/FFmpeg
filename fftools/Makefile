@@ -1,11 +1,10 @@
 AVPROGS-$(CONFIG_FFMPEG)   += ffmpeg
 AVPROGS-$(CONFIG_FFPLAY)   += ffplay
-AVPROGS-$(CONFIG_FFPROBE)  += ffprobe
 
 AVPROGS     := $(AVPROGS-yes:%=%$(PROGSSUF)$(EXESUF))
 PROGS       += $(AVPROGS)
 
-AVBASENAMES  = ffmpeg ffplay ffprobe
+AVBASENAMES  = ffmpeg ffplay
 ALLAVPROGS   = $(AVBASENAMES:%=%$(PROGSSUF)$(EXESUF))
 ALLAVPROGS_G = $(AVBASENAMES:%=%$(PROGSSUF)_g$(EXESUF))
 
@@ -37,19 +36,6 @@ OBJS-ffmpeg +=                  \
     fftools/textformat/tw_stdout.o    \
     $(OBJS-resman)                    \
     $(RESOBJS)                        \
-
-OBJS-ffprobe +=                       \
-    fftools/textformat/avtextformat.o \
-    fftools/textformat/tf_compact.o   \
-    fftools/textformat/tf_default.o   \
-    fftools/textformat/tf_flat.o      \
-    fftools/textformat/tf_ini.o       \
-    fftools/textformat/tf_json.o      \
-    fftools/textformat/tf_mermaid.o   \
-    fftools/textformat/tf_xml.o       \
-    fftools/textformat/tw_avio.o      \
-    fftools/textformat/tw_buffer.o    \
-    fftools/textformat/tw_stdout.o    \
 
 OBJS-ffmpeg += $(COMPAT_OBJS:%=compat/%)
 OBJS-ffplay += fftools/ffplay_renderer.o
