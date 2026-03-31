@@ -1,6 +1,6 @@
 # FFmpeg Custom Static Build
 
-This is a fork of FFmpeg configured for a single purpose: **static binaries for converting videos, audio, and images** in a desktop converter app.
+This is a fork of FFmpeg configured for a single purpose: **static binaries for converting videos, audio, and images**.
 
 The binary is shipped as a separate executable called via subprocess from the main app. The source must be made available to comply with GPL.
 
